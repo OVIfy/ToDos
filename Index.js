@@ -67,5 +67,7 @@ connectToDB(process.env.MONGO_URI)
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
+
+  console.log(process.env.MONGO_URI)
 })
 .catch(error => console.log(error))
