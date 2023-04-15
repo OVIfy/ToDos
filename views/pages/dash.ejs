@@ -9,7 +9,9 @@
     <title>Home</title>
 </head>
 <body>
-    <%- include('../partials/toggler', {headerText : 'Collections', username : name}); %>
+    <%- include('../partials/toggler', {headerText : 'Collections', username : name, breadcrumbs : [{link : '/home', text : 'Home'}]}); %>
+
+    
 
     <div class="flex flex-wrap justify-left pb-20">
 

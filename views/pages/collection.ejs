@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/stylesheets/output.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a1352e92bc.js" crossorigin="anonymous"></script>
-    <title>Collection</title>
+    <title>Tasks</title>
 </head>
 <body>
-    <%- include('../partials/toggler', {headerText : collectionName, username : name}); %>
+    <%- include('../partials/toggler', {headerText : 'Tasks', username : name, breadcrumbs : [{link : '/home', text : 'Home'}, {link : `/collection/${collection.id}`, text : collectionName}] }); %>
 
     <div class="flex flex-col items-center">
 

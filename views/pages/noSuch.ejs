@@ -8,7 +8,7 @@
     <title>Home</title>
 </head>
 <body>
-    <%- include('../partials/toggler', {headerText : '', username : name}); %>
+    <%- include('../partials/toggler', {headerText : '', username : name , breadcrumbs : [{link : '/home', text : 'Home'}] }); %>
 
     <% if (type == '404') { %>
         <div class="transform bg-contain mask mask-squircle bg-no-repeat  bg-center w-full min-h-[90vh] bg-[url('https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?size=626&ext=jpg&ga=GA1.2.1151131676.1665225849&semt=ais')]">

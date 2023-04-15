@@ -1,6 +1,7 @@
 <div class="navbar bg-base-100 justify-between items-center">
     <% if (headerText) { %>
         <a class="btn btn-ghost normal-case text-lg font-bold md:text-2xl lg:text-3xl"><%= headerText %></a>
+        
     <% } %>
     <div class="absolute right-7 flex gap-4 items-center">
         <% if (headerText) { %>
@@ -11,5 +12,12 @@
         <% } %>
         <input class="toggle toggle-lg theme-toggler" type="checkbox">
     </div>
+  </div>
+  <div class="text-sm px-5 breadcrumbs">
+    <ul>
+        <% breadcrumbs.length > 0 && breadcrumbs.forEach(element => { %>
+            <li><a href=<%= element.link %>><%= element.text %></a></li> 
+        <% }) %>
+    </ul>
   </div>
 
