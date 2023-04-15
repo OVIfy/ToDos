@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a1352e92bc.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+</head>
+<body>
+    <%- include('../partials/toggler', {headerText : 'Collections', username : name}); %>
+
+    <div class="flex flex-wrap justify-left pb-20">
+
+      <% collections && collections.forEach(element => { %>
+        <div class="transform group hover:-translate-y-3 transition-all w-1/2 md:w-1/4 lg:w-2/12 p-4" >
+          <label for=<%= element.id %> class="opacity-0 group-hover:opacity-100 group-hover:top-[70%] transition-all duration-1000 btn btn-sm btn-circle absolute bg-white right-5 top-5"><i class="fa-solid fa-trash-can text-red-500 md:text-2xl"></i></label>
+
+          
+          
+          <a href=<%= '/collection/' + element.id %>>
+              <div class="aspect-square bg-gray-500 bg-opacity-50 rounded-lg overflow-hidden">
+                  <img class="object-cover w-full h-full" src=<%=element.imgURL? element.imgURL : "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MzU5OTZ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8fHx8MTY4MTQ3NjQ2OA&ixlib=rb-4.0.3&q=80&w=200"%> alt="" srcset="">
+              </div>
+              <div class="text-center mt-2"><%= element.name && element.name %></div>
+          </a>
+        </div>
+
+        <input type="checkbox" id=<%= element.id %> class="modal-toggle"/>
+          <label for=<%= element.id %> class="modal cursor-pointer modal-bottom sm:modal-middle">
+            <label class="modal-box relative" for="">
+              <!-- delete form for each delete button -->
+              <form action=<%= '/collection/' + element.id + '/?_method=DELETE' %> method="post">
+                <p class="py-4">Are you sure you want to delete Collection <%= element.name %></p>
+                <div class="modal-action">
+                  <button class="btn">Yes</button>
+                  <label for=<%= element.id %> class="cursor-pointer btn">No</label>
+                </div>
+              </form>
+             
+            </label>
+          </label>
+        
+      <% }) %>
+    </div>
+
+    <% if (!collections.length > 0) { %>
+      <div class="transform bg-contain mask mask-squircle bg-no-repeat bg-center w-full min-h-[50vh] bg-[url('https://img.freepik.com/free-vector/folder-concept-illustration_114360-4114.jpg?size=626&ext=jpg&ga=GA1.1.1151131676.1665225849&semt=ais')]"></div>
+      <p class="font-[cursive] text-center mt-4 font-semibold lg:text-xl">No Collection yet, you can populate here by creating one</p>
+    <% } %>
+
+    <label for="my-modal" class="btn fixed bottom-5 right-2 bg-purple-900 hover:bg-purple-700">
+      <svg class="h-5 w-5 rotate-45 text-white" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M14.348 14.849a1.2 1.2 0 01-1.697 0L10 11.819l-2.651 3.03a1.2 1.2 0 01-1.697 0l-.566-.566a1.2 1.2 0 010-1.697l2.97-2.695L5.516 6.348a1.2 1.2 0 010-1.697l.566-.566a1.2 1.2 0 011.697 0L10 8.181l2.651-3.03a1.2 1.2 0 011.697 0l.566.566a1.2 1.2 0 010 1.697l-2.97 2.695 2.97 2.696a1.2 1.2 0 010 1.697l-.566.566z" clip-rule="evenodd" />
+      </svg>
+      <span class="ml-2 font-[cursive]">Create Collection</span>
+    </label>
+
+    
+    <input type="checkbox" id="my-modal" class="modal-toggle" />
+    <label for="my-modal" class="modal cursor-pointer modal-bottom sm:modal-middle">
+      <label class="modal-box relative" for="">
+        <form action="/home" method="POST">
+          <label for="my-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+          <h3 class="font-bold text-center text-2xl">Create A ToDo Collection</h3>
+          <p class="py-4 text-sm">ToDo Collections is how you group todos. you can create a collection for a day, an event, it depends on whatever you want</p>
+
+          <label class="label text-sm">Name</label>
+          <input required name="name" type="text" placeholder="collection name" class="input input-bordered input-primary w-full" />
+
+          <label class="label text-sm mt-4">Image</label>
+          <input name="image" type="text" placeholder="Img URL on the web" class="input input-bordered input-primary w-full" />
+          <label class="label text-xs text-right block">provide an accessible url you'll like to use as the cover for this collection</label>
+
+
+          <label class="label text-sm mt-4">Keyword</label>
+          <input name="keyword" type="text" placeholder="A school bag, game pads, check list ..." class="input input-bordered input-primary w-full" />
+          <label class="label text-xs text-right block">A single keyword or keywords seperated by space that best describes what this collection is for</label>
+          
+          <div class="modal-action">
+            
+              <button class="btn">Create<label tabindex="0" for="my-modal"></label></button>
+            </label>
+          </div>
+        </form>
+      </label>
+    </label>
+
+    <%- include('../partials/togglerScript'); %>
+</body>
+</html>

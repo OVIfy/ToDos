@@ -1,0 +1,15 @@
+<div class="navbar bg-base-100 justify-between items-center">
+    <% if (headerText) { %>
+        <a class="btn btn-ghost normal-case text-lg font-bold md:text-2xl lg:text-3xl"><%= headerText %></a>
+    <% } %>
+    <div class="absolute right-7 flex gap-4 items-center">
+        <% if (headerText) { %>
+            <p class="text-purple-500 font-semibold font-[cursive] lg:text-xl sm:text-sm text-xs">Hello <%= username %></p>
+            <form method="post" action="/logout">
+                <button type="submit" class="btn text-xs bg-purple-700 hover:bg-purple-500">LogOut</button>
+            </form>
+        <% } %>
+        <input class="toggle toggle-lg theme-toggler" type="checkbox">
+    </div>
+  </div>
+
