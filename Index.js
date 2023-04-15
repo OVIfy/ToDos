@@ -58,11 +58,14 @@ app.get('*', function(req, res){
 
 // app.use('/todos',)
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
 
 console.log(process.env.DATABASE)
 
 connectToDB(process.env.MONGO_URI)
+.then(()=>{
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+})
 .catch(error => console.log(error))
