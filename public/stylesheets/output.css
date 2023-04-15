@@ -2066,6 +2066,48 @@ html {
   align-items: center;
 }
 
+.swap {
+  position: relative;
+  display: inline-grid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  place-content: center;
+  cursor: pointer;
+}
+
+.swap > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform, opacity;
+}
+
+.swap input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.swap .swap-on,
+.swap .swap-indeterminate,
+.swap input:indeterminate ~ .swap-on {
+  opacity: 0;
+}
+
+.swap input:checked ~ .swap-off,
+.swap.swap-active .swap-off,
+.swap input:indeterminate ~ .swap-off {
+  opacity: 0;
+}
+
+.swap input:checked ~ .swap-on,
+.swap-active .swap-on,
+.swap input:indeterminate ~ .swap-indeterminate {
+  opacity: 1;
+}
+
 .toggle {
   flex-shrink: 0;
   --tglbg: hsl(var(--b1));
@@ -2476,6 +2518,12 @@ html {
   mask-image: url("data:image/svg+xml,%3csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M100 0C20 0 0 20 0 100s20 100 100 100 100-20 100-100S180 0 100 0Z'/%3e%3c/svg%3e");
 }
 
+.mockup-phone .display {
+  overflow: hidden;
+  border-radius: 40px;
+  margin-top: -25px;
+}
+
 .modal-open .modal-box,
 .modal-toggle:checked + .modal .modal-box,
 .modal:target .modal-box {
@@ -2762,48 +2810,20 @@ html {
   right: 0.5rem;
 }
 
-.right-7 {
-  right: 1.75rem;
+.right-5 {
+  right: 1.25rem;
 }
 
-.top-0 {
-  top: 0px;
+.right-7 {
+  right: 1.75rem;
 }
 
 .top-2 {
   top: 0.5rem;
 }
 
-.right-10 {
-  right: 2.5rem;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
-.left-10 {
-  left: 2.5rem;
-}
-
-.right-12 {
-  right: 3rem;
-}
-
-.top-12 {
-  top: 3rem;
-}
-
-.right-5 {
-  right: 1.25rem;
-}
-
 .top-5 {
   top: 1.25rem;
-}
-
-.right-4 {
-  right: 1rem;
 }
 
 .z-10 {
@@ -2880,16 +2900,12 @@ html {
   min-height: 100vh;
 }
 
-.min-h-\[90vh\] {
-  min-height: 90vh;
-}
-
-.min-h-\[70vh\] {
-  min-height: 70vh;
-}
-
 .min-h-\[50vh\] {
   min-height: 50vh;
+}
+
+.min-h-\[90vh\] {
+  min-height: 90vh;
 }
 
 .w-1\/2 {
@@ -2961,10 +2977,6 @@ html {
   flex-wrap: wrap;
 }
 
-.items-end {
-  align-items: flex-end;
-}
-
 .items-center {
   align-items: center;
 }
@@ -3005,10 +3017,6 @@ html {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.self-end {
-  align-self: flex-end;
 }
 
 .overflow-hidden {
@@ -3066,19 +3074,14 @@ html {
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
 
-.bg-purple-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(88 28 135 / var(--tw-bg-opacity));
-}
-
-.bg-indigo-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(67 56 202 / var(--tw-bg-opacity));
-}
-
 .bg-purple-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(126 34 206 / var(--tw-bg-opacity));
+}
+
+.bg-purple-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(88 28 135 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -3086,12 +3089,12 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-opacity-50 {
-  --tw-bg-opacity: 0.5;
-}
-
 .bg-opacity-0 {
   --tw-bg-opacity: 0;
+}
+
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
 }
 
 .bg-\[url\(\'\/images\/icon-google\.png\'\)\] {
@@ -3102,44 +3105,24 @@ html {
   background-image: url('/images/icon-twitter.png');
 }
 
-.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/oops-404-error-with-broken-robot-concept-illustration_114360-5529\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.2\.1151131676\.1665225849\&semt\=ais\'\)\] {
-  background-image: url('https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?size=626&ext=jpg&ga=GA1.2.1151131676.1665225849&semt=ais');
-}
-
-.bg-\[url\(\'https\:\/\/www\.freepik\.com\/free-vector\/400-error-bad-request-concept-illustration_7967799\.htm\#query\=not\%20found\&position\=6\&from_view\=keyword\&track\=ais\'\)\] {
-  background-image: url('https://www.freepik.com/free-vector/400-error-bad-request-concept-illustration_7967799.htm#query=not%20found&position=6&from_view=keyword&track=ais');
-}
-
-.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/error-404-concept-landing-page_52683-13617\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.1\.1151131676\.1665225849\&semt\=ais\'\)\] {
-  background-image: url('https://img.freepik.com/free-vector/error-404-concept-landing-page_52683-13617.jpg?size=626&ext=jpg&ga=GA1.1.1151131676.1665225849&semt=ais');
-}
-
-.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/page-found-concept-illustration_114360-1869\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.1\.1151131676\.1665225849\&semt\=ais\'\)\] {
-  background-image: url('https://img.freepik.com/free-vector/page-found-concept-illustration_114360-1869.jpg?size=626&ext=jpg&ga=GA1.1.1151131676.1665225849&semt=ais');
-}
-
-.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/no-data-concept-illustration_114360-626\.jpg\?w\=740\&t\=st\=1681549399\~exp\=1681549999\~hmac\=8c3e2b539fc414f26d5df1d7ac2d084ba369c2b19e32130696597fedbde7fbcf\'\)\] {
-  background-image: url('https://img.freepik.com/free-vector/no-data-concept-illustration_114360-626.jpg?w=740&t=st=1681549399~exp=1681549999~hmac=8c3e2b539fc414f26d5df1d7ac2d084ba369c2b19e32130696597fedbde7fbcf');
-}
-
-.bg-\[url\(\'https\:\/\/img\.freepik\.com\/premium-photo\/3d-render-man-cartoon-character-thinking-searching-answer-standing-near-big-question-mark_204298-293\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.1\.1151131676\.1665225849\&semt\=ais\'\)\] {
-  background-image: url('https://img.freepik.com/premium-photo/3d-render-man-cartoon-character-thinking-searching-answer-standing-near-big-question-mark_204298-293.jpg?size=626&ext=jpg&ga=GA1.1.1151131676.1665225849&semt=ais');
-}
-
-.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/curiosity-search-concept-illustration_114360-10850\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.1\.1151131676\.1665225849\&semt\=ais\'\)\] {
-  background-image: url('https://img.freepik.com/free-vector/curiosity-search-concept-illustration_114360-10850.jpg?size=626&ext=jpg&ga=GA1.1.1151131676.1665225849&semt=ais');
-}
-
-.bg-\[url\(\'https\:\/\/www\.freepik\.com\/free-vector\/folder-concept-illustration_10946093\.htm\#query\=empty\%20illustration\&position\=32\&from_view\=search\&track\=ais\'\)\] {
-  background-image: url('https://www.freepik.com/free-vector/folder-concept-illustration_10946093.htm#query=empty%20illustration&position=32&from_view=search&track=ais');
+.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/empty-concept-illustration_114360-1233\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.2\.1151131676\.1665225849\&semt\=ais\'\)\] {
+  background-image: url('https://img.freepik.com/free-vector/empty-concept-illustration_114360-1233.jpg?size=626&ext=jpg&ga=GA1.2.1151131676.1665225849&semt=ais');
 }
 
 .bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/folder-concept-illustration_114360-4114\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.1\.1151131676\.1665225849\&semt\=ais\'\)\] {
   background-image: url('https://img.freepik.com/free-vector/folder-concept-illustration_114360-4114.jpg?size=626&ext=jpg&ga=GA1.1.1151131676.1665225849&semt=ais');
 }
 
-.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/empty-concept-illustration_114360-1233\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.2\.1151131676\.1665225849\&semt\=ais\'\)\] {
-  background-image: url('https://img.freepik.com/free-vector/empty-concept-illustration_114360-1233.jpg?size=626&ext=jpg&ga=GA1.2.1151131676.1665225849&semt=ais');
+.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/oops-404-error-with-broken-robot-concept-illustration_114360-5529\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.2\.1151131676\.1665225849\&semt\=ais\'\)\] {
+  background-image: url('https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?size=626&ext=jpg&ga=GA1.2.1151131676.1665225849&semt=ais');
+}
+
+.bg-\[url\(\'https\:\/\/img\.freepik\.com\/free-vector\/page-found-concept-illustration_114360-1869\.jpg\?size\=626\&ext\=jpg\&ga\=GA1\.1\.1151131676\.1665225849\&semt\=ais\'\)\] {
+  background-image: url('https://img.freepik.com/free-vector/page-found-concept-illustration_114360-1869.jpg?size=626&ext=jpg&ga=GA1.1.1151131676.1665225849&semt=ais');
+}
+
+.bg-\[url\(\'https\:\/\/www\.freepik\.com\/free-vector\/400-error-bad-request-concept-illustration_7967799\.htm\#query\=not\%20found\&position\=6\&from_view\=keyword\&track\=ais\'\)\] {
+  background-image: url('https://www.freepik.com/free-vector/400-error-bad-request-concept-illustration_7967799.htm#query=not%20found&position=6&from_view=keyword&track=ais');
 }
 
 .bg-contain {
@@ -3171,10 +3154,6 @@ html {
   padding: 1rem;
 }
 
-.p-0 {
-  padding: 0px;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -3183,6 +3162,11 @@ html {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .py-1 {
@@ -3210,11 +3194,6 @@ html {
   padding-bottom: 1rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -3229,6 +3208,10 @@ html {
 
 .font-\[cursive\] {
   font-family: cursive;
+}
+
+.font-hand {
+  font-family: Gochi Hand, cursive;
 }
 
 .text-2xl {
@@ -3286,6 +3269,11 @@ html {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+.text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+
 .text-purple-500 {
   --tw-text-opacity: 1;
   color: rgb(168 85 247 / var(--tw-text-opacity));
@@ -3301,11 +3289,6 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-indigo-600 {
-  --tw-text-opacity: 1;
-  color: rgb(79 70 229 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -3318,25 +3301,13 @@ html {
   opacity: 0;
 }
 
-.opacity-40 {
-  opacity: 0.4;
-}
-
-.opacity-50 {
-  opacity: 0.5;
-}
-
-.opacity-80 {
-  opacity: 0.8;
-}
-
 .opacity-90 {
   opacity: 0.9;
 }
 
-.shadow-\[1px_1px_2px\] {
-  --tw-shadow: 1px 1px 2px;
-  --tw-shadow-colored: 1px 1px 2px var(--tw-shadow-color);
+.shadow-\[0px_0px_2px\] {
+  --tw-shadow: 0px 0px 2px;
+  --tw-shadow-colored: 0px 0px 2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -3346,73 +3317,8 @@ html {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-\[1px_1px_1px\] {
-  --tw-shadow: 1px 1px 1px;
-  --tw-shadow-colored: 1px 1px 1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[1px_1px\] {
-  --tw-shadow: 1px 1px;
-  --tw-shadow-colored: 1px 1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[1px_2px\] {
-  --tw-shadow: 1px 2px;
-  --tw-shadow-colored: 1px 2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0px_0px\] {
-  --tw-shadow: 0px 0px;
-  --tw-shadow-colored: 0px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0px_0px-3px\] {
-  --tw-shadow: 0px 0px-3px;
-  --tw-shadow-colored: 0px 0px-3px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0px_0px-10px\] {
-  --tw-shadow: 0px 0px-10px;
-  --tw-shadow-colored: 0px 0px-10px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0px_0px_1px\] {
-  --tw-shadow: 0px 0px 1px;
-  --tw-shadow-colored: 0px 0px 1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0px_0px_3px\] {
-  --tw-shadow: 0px 0px 3px;
-  --tw-shadow-colored: 0px 0px 3px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0px_0px_4px\] {
-  --tw-shadow: 0px 0px 4px;
-  --tw-shadow-colored: 0px 0px 4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-\[0px_0px_2px\] {
-  --tw-shadow: 0px 0px 2px;
-  --tw-shadow-colored: 0px 0px 2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-white {
   --tw-shadow-color: #fff;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.shadow-gray-500 {
-  --tw-shadow-color: #6b7280;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -3444,15 +3350,6 @@ html {
 
 .duration-1000 {
   transition-duration: 1000ms;
-}
-
-.hover\:hero-overlay:hover {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  height: 100%;
-  width: 100%;
-  background-color: hsl(var(--n) / var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.5;
 }
 
 .btn-outline .focus-visible\:outline:focus-visible.badge {
@@ -3536,24 +3433,14 @@ html {
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-purple-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-indigo-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-purple-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(168 85 247 / var(--tw-bg-opacity));
 }
 
-.hover\:grayscale:hover {
-  --tw-grayscale: grayscale(100%);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.hover\:bg-purple-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
 }
 
 .focus\:z-10:focus {
@@ -3595,26 +3482,12 @@ html {
   outline-color: #4f46e5;
 }
 
-.group:hover .group-hover\:top-\[90\%\] {
-  top: 90%;
-}
-
 .group:hover .group-hover\:top-\[70\%\] {
   top: 70%;
 }
 
-.group:hover .group-hover\:translate-y-\[90\%\] {
-  --tw-translate-y: 90%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-.group:hover .group-hover\:grayscale {
-  --tw-grayscale: grayscale(100%);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 640px) {
