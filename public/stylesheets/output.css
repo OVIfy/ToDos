@@ -2826,6 +2826,26 @@ html {
   top: 1.25rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
+.top-\[100px\] {
+  top: 100px;
+}
+
+.top-\[40px\] {
+  top: 40px;
+}
+
+.top-\[30px\] {
+  top: 30px;
+}
+
+.top-\[20px\] {
+  top: 20px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -2862,6 +2882,10 @@ html {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .block {
@@ -2906,6 +2930,10 @@ html {
 
 .min-h-\[90vh\] {
   min-height: 90vh;
+}
+
+.min-h-\[80vh\] {
+  min-height: 80vh;
 }
 
 .w-1\/2 {
@@ -2975,6 +3003,10 @@ html {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -3239,6 +3271,11 @@ html {
   line-height: 1rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3491,6 +3528,10 @@ html {
 }
 
 @media (min-width: 640px) {
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3514,6 +3555,11 @@ html {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
