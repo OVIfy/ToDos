@@ -52,7 +52,7 @@ app.use('/home', homeRouter)
 app.use('/collection', collectionRouter)
 app.use('/collection', taskRouter)
 app.get('*', function(req, res){
-  res.status(404).render('pages/noSuch', {type : 'root', name : req.session.user.username});
+  res.status(404).render('pages/noSuch', {type : 'root', name : ''});
 });
 
 
